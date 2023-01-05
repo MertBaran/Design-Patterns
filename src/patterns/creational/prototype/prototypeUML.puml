@@ -1,0 +1,37 @@
+@startuml
+class patterns.creational.prototype.Daire {
++ int yaricap
++ Daire()
++ Daire(Daire)
++ Sekil clone()
++ String toString()
++ boolean equals(Object)
+}
+class patterns.creational.prototype.Client {
++ {static} void main(String[])
+- {static} void klonlaVeKıyasla(List<Sekil>,List<Sekil>)
+}
+abstract class patterns.creational.prototype.Sekil {
++ int x
++ int y
++ String renk
++ Sekil()
++ Sekil(Sekil)
++ {abstract}Sekil clone()
++ boolean equals(Object)
++ String toString()
+}
+class patterns.creational.prototype.Dikdortgen {
++ int genislik
++ int yukseklik
++ Dikdortgen()
++ Dikdortgen(Dikdortgen)
++ String toString()
++ Sekil clone()
++ boolean equals(Object)
+}
+
+patterns.creational.prototype.Client ..> patterns.creational.prototype.Sekil
+patterns.creational.prototype.Sekil <|-- patterns.creational.prototype.Daire
+patterns.creational.prototype.Sekil <|-- patterns.creational.prototype.Dikdortgen
+@enduml

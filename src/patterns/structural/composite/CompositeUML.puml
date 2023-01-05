@@ -1,0 +1,57 @@
+@startuml
+class patterns.structural.composite.Kumanya {
+- String adi
+- List<Urun> urunList
+- List<Paket> paketList
++ Kumanya(String)
++ BigDecimal getFiyat()
++ String getAdi()
++ void setAdi(String)
++ List<Urun> getUrunList()
++ void setUrunList(List<Urun>)
++ List<Paket> getPaketList()
++ void setPaketList(List<Paket>)
+}
+interface patterns.structural.composite.Fiyatlanabilir {
+~ BigDecimal getFiyat()
+}
+class patterns.structural.composite.FiyatHesaplamaUtil {
++ {static} BigDecimal getToplamUrunFiyati(List<Urun>)
++ {static} BigDecimal getToplamPaketFiyati(List<Paket>)
+}
+class patterns.structural.composite.Urun {
+- String adi
+- BigDecimal fiyat
++ Urun(String,BigDecimal)
++ BigDecimal getFiyat()
++ String getAdi()
++ void setAdi(String)
++ void setFiyat(BigDecimal)
+}
+class patterns.structural.composite.Paket {
+- String adi
+- List<Urun> urunList
++ Paket(String)
++ BigDecimal getFiyat()
++ String getAdi()
++ void setAdi(String)
++ List<Urun> getUrunList()
++ void setUrunList(List<Urun>)
+}
+class patterns.structural.composite.Sepet {
+- String adi
+- List<Fiyatlanabilir> fiyatlanabilirList
++ Sepet(String)
++ BigDecimal toplamOdenecekTutar()
++ String getAdi()
++ void setAdi(String)
++ List<Fiyatlanabilir> getFiyatlanabilirList()
++ void setFiyatlanabilirList(List<Fiyatlanabilir>)
+}
+patterns.structural.composite.Sepet --> patterns.structural.composite.Fiyatlanabilir
+patterns.structural.composite.FiyatHesaplamaUtil ..> patterns.structural.composite.Paket
+patterns.structural.composite.FiyatHesaplamaUtil ..> patterns.structural.composite.Urun
+patterns.structural.composite.Fiyatlanabilir <|.. patterns.structural.composite.Kumanya
+patterns.structural.composite.Fiyatlanabilir <|.. patterns.structural.composite.Urun
+patterns.structural.composite.Fiyatlanabilir <|.. patterns.structural.composite.Paket
+@enduml

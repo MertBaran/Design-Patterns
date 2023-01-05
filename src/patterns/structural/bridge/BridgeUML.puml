@@ -1,0 +1,70 @@
+@startuml
+class patterns.structural.Bridge.TV {
+- boolean on
+- int volume
+- int channel
++ boolean isEnabled()
++ void enable()
++ void disable()
++ int getVolume()
++ void setVolume(int)
++ int getChannel()
++ void setChannel(int)
++ void printStatus()
+}
+class patterns.structural.Bridge.Client {
++ {static} void main(String[])
++ {static} void testDevice(Device)
+}
+interface patterns.structural.Bridge.Device {
+~ boolean isEnabled()
+~ void enable()
+~ void disable()
+~ int getVolume()
+~ void setVolume(int)
+~ int getChannel()
+~ void setChannel(int)
+~ void printStatus()
+}
+class patterns.structural.Bridge.AdvancedRemote {
++ AdvancedRemote(Device)
++ void mute()
+}
+class patterns.structural.Bridge.Radio {
+- boolean on
+- int volume
+- int channel
++ boolean isEnabled()
++ void enable()
++ void disable()
++ int getVolume()
++ void setVolume(int)
++ int getChannel()
++ void setChannel(int)
++ void printStatus()
+}
+interface patterns.structural.Bridge.Remote {
+~ void power()
+~ void volumeDown()
+~ void volumeUp()
+~ void channelDown()
+~ void channelUp()
+}
+class patterns.structural.Bridge.BasicRemote {
+# Device device
++ BasicRemote()
++ BasicRemote(Device)
++ void power()
++ void volumeDown()
++ void volumeUp()
++ void channelDown()
++ void channelUp()
+}
+
+patterns.structural.Bridge.Client ..> patterns.structural.Bridge.Device
+patterns.structural.Bridge.Device <|.. patterns.structural.Bridge.TV
+patterns.structural.Bridge.BasicRemote - patterns.structural.Bridge.Device
+patterns.structural.Bridge.BasicRemote <|-- patterns.structural.Bridge.AdvancedRemote
+patterns.structural.Bridge.Device <|.. patterns.structural.Bridge.Radio
+patterns.structural.Bridge.Remote <|.. patterns.structural.Bridge.BasicRemote
+@enduml

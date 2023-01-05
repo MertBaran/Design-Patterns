@@ -1,0 +1,37 @@
+@startuml
+class patterns.behavioral.visitor.animal.Cat {
++ Cat(String)
++ void eat()
++ void accept(Feeder)
+}
+interface patterns.behavioral.visitor.animal.Feeder {
++ void feed(Animal)
+}
+class patterns.behavioral.visitor.animal.Dog {
++ Dog(String)
++ void eat()
++ void accept(Feeder)
+}
+abstract class patterns.behavioral.visitor.animal.AbstractAnimal {
+- String name
++ AbstractAnimal(String)
++ String getName()
+}
+class patterns.behavioral.visitor.animal.DogFeeder {
++ void feed(Animal)
+}
+interface patterns.behavioral.visitor.animal.Animal {
+~ void eat()
+~ String getName()
+~ void accept(Feeder)
+}
+class patterns.behavioral.visitor.animal.CatFeeder {
++ void feed(Animal)
+}
+patterns.behavioral.visitor.animal.Feeder ..> patterns.behavioral.visitor.animal.Animal
+patterns.behavioral.visitor.animal.AbstractAnimal <|-- patterns.behavioral.visitor.animal.Cat
+patterns.behavioral.visitor.animal.AbstractAnimal <|-- patterns.behavioral.visitor.animal.Dog
+patterns.behavioral.visitor.animal.Animal <|.. patterns.behavioral.visitor.animal.AbstractAnimal
+patterns.behavioral.visitor.animal.Feeder <|.. patterns.behavioral.visitor.animal.DogFeeder
+patterns.behavioral.visitor.animal.Feeder <|.. patterns.behavioral.visitor.animal.CatFeeder
+@enduml

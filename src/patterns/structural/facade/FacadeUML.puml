@@ -1,0 +1,52 @@
+@startuml
+class patterns.structural.facade.CPU {
++ void start()
+}
+class patterns.structural.facade.Display {
++ void start()
+}
+class patterns.structural.facade.BIOS {
+- ROM rom
++ BIOS()
++ void start()
+}
+class patterns.structural.facade.HardDrive {
++ void start()
+}
+class patterns.structural.facade.RAM {
+- BIOS bios
+- boolean kernelLoaded
+- boolean osLoaded
++ RAM()
++ boolean loadOSKernelImage()
++ boolean loadOS()
++ void loadDrivers()
++ void startServices()
++ void fixIt()
+}
+class patterns.structural.facade.Client {
++ {static} void main(String[])
+}
+class patterns.structural.facade.ROM {
+- int size
++ ROM(int)
++ byte[] getOSKernelImage()
+}
+class patterns.structural.facade.Computer {
+- CPU cpu
+- RAM ram
+- HardDrive hd
+- Display display
++ Computer()
++ void start()
+}
+patterns.structural.facade.Client ..> patterns.structural.facade.Computer
+patterns.structural.facade.BIOS - patterns.structural.facade.ROM
+patterns.structural.facade.RAM - patterns.structural.facade.BIOS
+patterns.structural.facade.Computer --> patterns.structural.facade.BIOS
+patterns.structural.facade.Computer --> patterns.structural.facade.CPU
+patterns.structural.facade.Computer --> patterns.structural.facade.Display
+patterns.structural.facade.Computer --> patterns.structural.facade.HardDrive
+patterns.structural.facade.Computer --> patterns.structural.facade.RAM
+patterns.structural.facade.Computer --> patterns.structural.facade.ROM
+@enduml

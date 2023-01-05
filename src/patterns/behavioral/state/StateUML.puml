@@ -1,0 +1,33 @@
+@startuml
+class patterns.behavioral.state.Defans {
++ void kareBas()
++ void ucgenBas()
++ void yuvarlakBas()
++ void xBas()
+}
+class patterns.behavioral.state.Oyun {
+- Konsol konsol
++ Oyun()
++ void ucgen()
++ void kare()
++ void yuvarlak()
++ void x()
++ void topuKap()
++ void topuKaptir()
+}
+interface patterns.behavioral.state.Konsol {
+~ void kareBas()
+~ void ucgenBas()
+~ void yuvarlakBas()
+~ void xBas()
+}
+class patterns.behavioral.state.Hucum {
++ void kareBas()
++ void ucgenBas()
++ void yuvarlakBas()
++ void xBas()
+}
+patterns.behavioral.state.Oyun --> patterns.behavioral.state.Konsol
+patterns.behavioral.state.Konsol <|.. patterns.behavioral.state.Defans
+patterns.behavioral.state.Konsol <|.. patterns.behavioral.state.Hucum
+@enduml

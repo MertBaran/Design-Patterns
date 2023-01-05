@@ -1,0 +1,36 @@
+@startuml
+class patterns.structural.proxy.Vatandas {
+- Basbakan basbakan
++ Vatandas(BasbakanlikKalemi)
++ String derdiniAnlat()
++ String isIste()
+}
+interface patterns.structural.proxy.Basbakan {
++ void dertDinle(String)
++ void isBul(String)
+}
+class patterns.structural.proxy.BasbakanlikKalemi {
+- Basbakan basbakan
++ BasbakanlikKalemi(Basbakan)
++ Basbakan banaBasbakaniVer()
+}
+class patterns.structural.proxy.GercekBasbakan {
++ void dertDinle(String)
++ void isBul(String)
+}
+class patterns.structural.proxy.VekilBasbakan {
+- Basbakan gercekBasbakan
++ VekilBasbakan(Basbakan)
++ void dertDinle(String)
++ void isBul(String)
+- boolean ayikla(String)
+- void ilet(String)
+}
+patterns.structural.proxy.Vatandas ..> patterns.structural.proxy.BasbakanlikKalemi
+patterns.structural.proxy.BasbakanlikKalemi ..> patterns.structural.proxy.VekilBasbakan
+patterns.structural.proxy.Vatandas --> patterns.structural.proxy.Basbakan
+patterns.structural.proxy.BasbakanlikKalemi --> patterns.structural.proxy.Basbakan
+patterns.structural.proxy.VekilBasbakan --> patterns.structural.proxy.Basbakan
+patterns.structural.proxy.Basbakan <|.. patterns.structural.proxy.GercekBasbakan
+patterns.structural.proxy.Basbakan <|.. patterns.structural.proxy.VekilBasbakan
+@enduml

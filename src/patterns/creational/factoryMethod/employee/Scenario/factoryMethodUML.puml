@@ -1,0 +1,66 @@
+@startuml
+class patterns.creational.factoryMethod.employee.Scenario.CalisanFactory {
++ {static} Calisan calisanYarat(String)
++ {static} Mudur mudurYarat(String,String)
++ {static} GenelMudur genelMudurYarat(String,String,int)
+}
+class patterns.creational.factoryMethod.employee.Scenario.IK {
+- List<Calisan> calisanlar
++ IK()
++ List<Calisan> getCalisanlar()
++ int getCalisanlarinSayisi()
++ void yeniCalisanEkle(Calisan)
++ void CalisanlariListele()
+}
+
+class patterns.creational.factoryMethod.employee.Scenario.Calisan {
+# int no
+# String isim
+# int yil
+# String departman
+# double maas
++ {static} int SABIT_MAAS
++ Calisan(int,String,int,String)
++ void calis()
++ double maasHesapla()
++ void bilgiVer()
++ int getNo()
++ String getIsim()
++ int getYil()
++ String getDepartman()
++ double getMaas()
++ String toString()
+}
+class patterns.creational.factoryMethod.employee.Scenario.GenelMudur {
+# double bonus
++ GenelMudur(int,String,int,String,String,double)
++ void calis()
++ String getYonetilenDepartman()
++ void yonet()
+- void stratejikPlanYap()
++ double maasHesapla()
++ double getBonus()
++ void bilgiVer()
++ String toString()
+}
+
+class patterns.creational.factoryMethod.employee.Scenario.Mudur {
+# String yonetilenDepartman
++ {static} int MUDUR_MAASI
++ Mudur(int,String,int,String,String)
++ void calis()
++ void yonet()
++ double maasHesapla()
++ String getYonetilenDepartman()
++ void bilgiVer()
++ String toString()
+}
+
+patterns.creational.factoryMethod.employee.Scenario.IK ..> patterns.creational.factoryMethod.employee.Scenario.CalisanFactory
+patterns.creational.factoryMethod.employee.Scenario.IK --> patterns.creational.factoryMethod.employee.Scenario.Calisan
+patterns.creational.factoryMethod.employee.Scenario.CalisanFactory ..> patterns.creational.factoryMethod.employee.Scenario.Calisan
+patterns.creational.factoryMethod.employee.Scenario.CalisanFactory ..> patterns.creational.factoryMethod.employee.Scenario.GenelMudur
+patterns.creational.factoryMethod.employee.Scenario.CalisanFactory ..> patterns.creational.factoryMethod.employee.Scenario.Mudur
+patterns.creational.factoryMethod.employee.Scenario.Mudur <|-- patterns.creational.factoryMethod.employee.Scenario.GenelMudur
+patterns.creational.factoryMethod.employee.Scenario.Calisan <|-- patterns.creational.factoryMethod.employee.Scenario.Mudur
+@enduml

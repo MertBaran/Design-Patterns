@@ -1,0 +1,74 @@
+@startuml
+class patterns.structural.decorator.Sucuk {
++ Sucuk(Tost,String,int)
+}
+class patterns.structural.decorator.Domates {
++ Domates(Tost,String,int)
+}
+class patterns.structural.decorator.SusurlukTostFactory {
++ Tost tostYap()
++ void icindekileriYazdir(Tost)
+}
+class patterns.structural.decorator.Ketcap {
++ Ketcap(Tost,String,int)
+}
+class patterns.structural.decorator.AyvalikTostFactory {
++ Tost tostYap()
++ void icindekileriYazdir(Tost)
+}
+abstract class patterns.structural.decorator.Malzeme {
+- String isim
+# Tost tostMalzemeleri
+# int fiyat
+- List<Malzeme> malzemeler
++ Malzeme(Tost,int,String)
++ int fiyatHesapla()
++ List<Malzeme> getMalzemeler()
++ String getIsim()
++ Tost getTostMalzemeleri()
++ String toString()
+}
+class patterns.structural.decorator.Peynir {
++ Peynir(Tost,String,int)
+}
+class patterns.structural.decorator.Musteri {
+- String ad
++ Musteri(String)
++ Tost siparisVer(AbstractTostFactory)
++ String getAd()
+}
+class patterns.structural.decorator.Marul {
++ Marul(Tost,String,int)
+}
+class patterns.structural.decorator.TostEkmegi {
+- {static} String isim
+# int fiyat
++ TostEkmegi(String,int)
++ int fiyatHesapla()
++ List<Malzeme> getMalzemeler()
+}
+interface patterns.structural.decorator.AbstractTostFactory {
++ Tost tostYap()
++ void icindekileriYazdir(Tost)
+}
+interface patterns.structural.decorator.Tost {
++ int fiyatHesapla()
+~ List<Malzeme> getMalzemeler()
+}
+patterns.structural.decorator.AyvalikTostFactory . patterns.structural.decorator.Tost
+patterns.structural.decorator.SusurlukTostFactory . patterns.structural.decorator.Tost
+patterns.structural.decorator.TostEkmegi . patterns.structural.decorator.Malzeme
+patterns.structural.decorator.Musteri ..> patterns.structural.decorator.AbstractTostFactory
+patterns.structural.decorator.Malzeme --> patterns.structural.decorator.Malzeme
+patterns.structural.decorator.AbstractTostFactory ..> patterns.structural.decorator.Tost
+patterns.structural.decorator.Musteri ..> patterns.structural.decorator.Tost
+patterns.structural.decorator.Malzeme <|-- patterns.structural.decorator.Sucuk
+patterns.structural.decorator.Malzeme <|-- patterns.structural.decorator.Domates
+patterns.structural.decorator.AbstractTostFactory <|.. patterns.structural.decorator.SusurlukTostFactory
+patterns.structural.decorator.Malzeme <|-- patterns.structural.decorator.Ketcap
+patterns.structural.decorator.AbstractTostFactory <|.. patterns.structural.decorator.AyvalikTostFactory
+patterns.structural.decorator.Tost <|.. patterns.structural.decorator.Malzeme
+patterns.structural.decorator.Malzeme <|-- patterns.structural.decorator.Peynir
+patterns.structural.decorator.Malzeme <|-- patterns.structural.decorator.Marul
+patterns.structural.decorator.Tost <|.. patterns.structural.decorator.TostEkmegi
+@enduml

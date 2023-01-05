@@ -1,0 +1,47 @@
+@startuml
+enum patterns.behavioral.chainOfResponsibility.EnumIl {
++  ISTANBUL
++  ANKARA
++  ANTALYA
++  BALIKESIR
++  KARS
+- String il
+~ EnumIl(String)
++ String getIl()
++ String toString()
+}
+class patterns.behavioral.chainOfResponsibility.AnkaraSube {
++ AnkaraSube()
+}
+class patterns.behavioral.chainOfResponsibility.AntalyaSube {
++ AntalyaSube()
+}
+class patterns.behavioral.chainOfResponsibility.IstanbulSube {
++ IstanbulSube()
+}
+class patterns.behavioral.chainOfResponsibility.BalikesirSube {
++ BalikesirSube()
+}
+class patterns.behavioral.chainOfResponsibility.AbcKargo {
++ {static} KargoSirketi getKargoSirketi()
+}
+abstract class patterns.behavioral.chainOfResponsibility.KargoSirketi {
+- EnumIl enumIl
+- KargoSirketi sonrakiKargoSirketi
++ KargoSirketi(EnumIl)
++ KargoSirketi getSonrakiKargoSirketi()
++ KargoSirketi setSonrakiKargoSirketi(KargoSirketi)
++ EnumIl getEnumIl()
++ void kargola(EnumIl)
+- void hizmetAlaniDisiYazdir(EnumIl)
+- void kargoTeslimBilgileriYazdir()
+- void gelenKargoBilgileriYazdir(EnumIl)
+}
+
+patterns.behavioral.chainOfResponsibility.KargoSirketi --> patterns.behavioral.chainOfResponsibility.EnumIl
+patterns.behavioral.chainOfResponsibility.KargoSirketi <.. patterns.behavioral.chainOfResponsibility.AbcKargo
+patterns.behavioral.chainOfResponsibility.KargoSirketi <|-- patterns.behavioral.chainOfResponsibility.AnkaraSube
+patterns.behavioral.chainOfResponsibility.KargoSirketi <|-- patterns.behavioral.chainOfResponsibility.AntalyaSube
+patterns.behavioral.chainOfResponsibility.KargoSirketi <|-- patterns.behavioral.chainOfResponsibility.IstanbulSube
+patterns.behavioral.chainOfResponsibility.KargoSirketi <|-- patterns.behavioral.chainOfResponsibility.BalikesirSube
+@enduml

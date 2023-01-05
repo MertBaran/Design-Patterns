@@ -1,0 +1,46 @@
+@startuml
+class patterns.structural.Adapter.USPowerProvider {
+- boolean on
++ USPowerProvider()
++ void providePowerAt110V()
++ void pushSwitch()
+}
+class patterns.structural.Adapter.TwoWayUSTurkishPowerAdapter {
+- USPowerSource usPowerSource
+- TurkishPowerSource turkishPowerSource
+- boolean on
+- String powerSource
++ TwoWayUSTurkishPowerAdapter(TurkishPowerSource)
++ TwoWayUSTurkishPowerAdapter(USPowerSource)
++ void providePowerAt110V()
++ void providePowerAt220V()
++ void pushSwitch()
++ void turnOn()
++ void turnOff()
+- void convert110To220()
+- void convert220To110()
+}
+class patterns.structural.Adapter.TurkishPowerProvider {
++ TurkishPowerProvider()
++ void providePowerAt220V()
++ void turnOn()
++ void turnOff()
+}
+interface patterns.structural.Adapter.USPowerSource {
++ void providePowerAt110V()
++ void pushSwitch()
+}
+interface patterns.structural.Adapter.TurkishPowerSource {
++ void providePowerAt220V()
++ void turnOn()
++ void turnOff()
+}
+
+
+patterns.structural.Adapter.USPowerSource <|.. patterns.structural.Adapter.USPowerProvider
+patterns.structural.Adapter.TurkishPowerSource <|.. patterns.structural.Adapter.TwoWayUSTurkishPowerAdapter
+patterns.structural.Adapter.USPowerSource <|.. patterns.structural.Adapter.TwoWayUSTurkishPowerAdapter
+patterns.structural.Adapter.TurkishPowerSource <-- patterns.structural.Adapter.TwoWayUSTurkishPowerAdapter
+patterns.structural.Adapter.USPowerSource <-- patterns.structural.Adapter.TwoWayUSTurkishPowerAdapter
+patterns.structural.Adapter.TurkishPowerSource <|.. patterns.structural.Adapter.TurkishPowerProvider
+@enduml

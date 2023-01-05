@@ -1,0 +1,38 @@
+@startuml
+class patterns.behavioral.iterator.SoruIterator {
+- Soru[] sorular
+- int sira
++ SoruIterator(Soru[])
++ boolean hasNext()
++ Object next()
+}
+class patterns.behavioral.iterator.Kitap {
+- String adi
+- List<Soru> soruList
++ Kitap(String)
++ String getAdi()
++ void setAdi(String)
++ Iterator getSoruIterator()
+}
+class patterns.behavioral.iterator.Fasikul {
+- String adi
+- Soru[] sorular
++ Fasikul(String)
++ String getAdi()
++ void setAdi(String)
++ SoruIterator getSoruIterator()
+}
+class patterns.behavioral.iterator.Soru {
+- Long soruNo
++ Soru(Long)
++ Long getSoruNo()
++ void setSoruNo(Long)
+}
+
+patterns.behavioral.iterator.SoruIterator --> patterns.behavioral.iterator.Soru
+patterns.behavioral.iterator.Fasikul --> patterns.behavioral.iterator.Soru
+patterns.behavioral.iterator.Fasikul ..> patterns.behavioral.iterator.SoruIterator
+patterns.behavioral.iterator.Kitap --> patterns.behavioral.iterator.Soru
+patterns.behavioral.iterator.Kitap ..> java.util.Iterator
+java.util.Iterator <|.. patterns.behavioral.iterator.SoruIterator
+@enduml

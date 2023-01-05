@@ -1,0 +1,14 @@
+@startuml
+class patterns.creational.singleton.Client {
++ {static} void main(String[])
+~ {static} void cumhurbaskaniYarat(Cumhurbaskani)
+}
+class patterns.creational.singleton.Cumhurbaskani {
+- {static} Cumhurbaskani cumhurbaskani
+- String adi
+- Cumhurbaskani(String)
++ {static} Cumhurbaskani secim(String)
++ String getAdi()
+}
+patterns.creational.singleton.Client ..> patterns.creational.singleton.Cumhurbaskani
+@enduml

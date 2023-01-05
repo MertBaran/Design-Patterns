@@ -1,0 +1,60 @@
+@startuml
+enum patterns.behavioral.strategy.Bolum {
++  SAYISAL
++  SOZEL
++  ESITAGIRLIK
+- String bolum
+~ Bolum(String)
++ String toString()
+}
+class patterns.behavioral.strategy.Ogrenci {
+- Bolum bolum
+- SinavStratejisi sinavStratejisi
+~ Ogrenci(Bolum)
++ String getOncelikSiralamasi()
+}
+class patterns.behavioral.strategy.SozelStratejisi {
++ Ders getBirinci()
++ Ders getIkinci()
++ Ders getUcuncu()
++ Ders getDorduncu()
+}
+interface patterns.behavioral.strategy.SinavStratejisi {
+~ Ders getBirinci()
+~ Ders getIkinci()
+~ Ders getUcuncu()
+~ Ders getDorduncu()
+}
+class patterns.behavioral.strategy.SayisalStratejisi {
++ Ders getBirinci()
++ Ders getIkinci()
++ Ders getUcuncu()
++ Ders getDorduncu()
+}
+enum patterns.behavioral.strategy.Ders {
++  TURKCE
++  MATEMATIK
++  FEN
++  SOSYAL
+- String ders
+~ Ders(String)
++ String toString()
+}
+class patterns.behavioral.strategy.EsitAgirlikStratejisi {
++ Ders getBirinci()
++ Ders getIkinci()
++ Ders getUcuncu()
++ Ders getDorduncu()
+}
+
+patterns.behavioral.strategy.SinavStratejisi ..> patterns.behavioral.strategy.Ders
+patterns.behavioral.strategy.SayisalStratejisi ..> patterns.behavioral.strategy.Ders
+patterns.behavioral.strategy.EsitAgirlikStratejisi ..> patterns.behavioral.strategy.Ders
+patterns.behavioral.strategy.SozelStratejisi ..> patterns.behavioral.strategy.Ders
+patterns.behavioral.strategy.Bolum ..> patterns.behavioral.strategy.Ders
+patterns.behavioral.strategy.Ogrenci --> patterns.behavioral.strategy.Bolum
+patterns.behavioral.strategy.Ogrenci --> patterns.behavioral.strategy.SinavStratejisi
+patterns.behavioral.strategy.SinavStratejisi <|.. patterns.behavioral.strategy.SozelStratejisi
+patterns.behavioral.strategy.SinavStratejisi <|.. patterns.behavioral.strategy.SayisalStratejisi
+patterns.behavioral.strategy.SinavStratejisi <|.. patterns.behavioral.strategy.EsitAgirlikStratejisi
+@enduml

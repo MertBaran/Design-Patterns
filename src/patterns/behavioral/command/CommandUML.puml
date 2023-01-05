@@ -1,0 +1,34 @@
+@startuml
+interface patterns.behavioral.command.Islem {
+~ BigDecimal islem(BigDecimal,BigDecimal)
+}
+class patterns.behavioral.command.ModCommand {
++ BigDecimal islem(BigDecimal,BigDecimal)
+}
+class patterns.behavioral.command.UstCommand {
++ BigDecimal islem(BigDecimal,BigDecimal)
+}
+class patterns.behavioral.command.CikarmaCommand {
++ BigDecimal islem(BigDecimal,BigDecimal)
+}
+class patterns.behavioral.command.CarpmaCommand {
++ BigDecimal islem(BigDecimal,BigDecimal)
+}
+class patterns.behavioral.command.ToplamaCommand {
++ BigDecimal islem(BigDecimal,BigDecimal)
+}
+
+class patterns.behavioral.command.BolmeCommand {
++ BigDecimal islem(BigDecimal,BigDecimal)
+}
+class patterns.behavioral.command.HesapMakinesi {
++ {static} BigDecimal islem(Islem,BigDecimal,BigDecimal)
+}
+patterns.behavioral.command.HesapMakinesi ..> patterns.behavioral.command.Islem
+patterns.behavioral.command.Islem <|.. patterns.behavioral.command.ModCommand
+patterns.behavioral.command.Islem <|.. patterns.behavioral.command.UstCommand
+patterns.behavioral.command.Islem <|.. patterns.behavioral.command.CikarmaCommand
+patterns.behavioral.command.Islem <|.. patterns.behavioral.command.CarpmaCommand
+patterns.behavioral.command.Islem <|.. patterns.behavioral.command.ToplamaCommand
+patterns.behavioral.command.Islem <|.. patterns.behavioral.command.BolmeCommand
+@enduml

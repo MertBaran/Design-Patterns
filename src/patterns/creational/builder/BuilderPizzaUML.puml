@@ -1,0 +1,39 @@
+@startuml
+
+class patterns.creational.builder.TonBalikliPizzaBuilder {
++ void buildHamur()
++ void buildSos()
++ void buildMalzeme()
+}
+class patterns.creational.builder.BaharatliPizzaBuilder {
++ void buildHamur()
++ void buildSos()
++ void buildMalzeme()
+}
+class patterns.creational.builder.Pizza {
+- String hamur
+- String sos
+- String malzeme
++ void setHamur(String)
++ void setSos(String)
++ void setMalzeme(String)
+}
+class patterns.creational.builder.Asci {
+- PizzaBuilder pizzaBuilder
++ void setPizzaBuilder(PizzaBuilder)
++ Pizza getPizza()
++ void PizzaYap()
+}
+abstract class patterns.creational.builder.PizzaBuilder {
+# Pizza pizza
++ Pizza getPizza()
++ void yeniPizzaYarat()
++ {abstract}void buildHamur()
++ {abstract}void buildSos()
++ {abstract}void buildMalzeme()
+}
+patterns.creational.builder.Asci --> patterns.creational.builder.PizzaBuilder
+patterns.creational.builder.PizzaBuilder --> patterns.creational.builder.Pizza
+patterns.creational.builder.PizzaBuilder <|-- patterns.creational.builder.TonBalikliPizzaBuilder
+patterns.creational.builder.PizzaBuilder <|-- patterns.creational.builder.BaharatliPizzaBuilder
+@enduml

@@ -1,0 +1,74 @@
+@startuml
+class patterns.creational.abstractFactory.university.DorduncuSinifFactory {
++ DorduncuSinifFactory()
++ Mufredat dersYarat(String)
++ OgretimUyesi ogretimUyesiYarat(String)
++ Takvim takvimYarat(String)
++ Mufredat mufredatYarat(String)
+}
+class patterns.creational.abstractFactory.university.Ders {
++ Ders()
+}
+class patterns.creational.abstractFactory.university.Mufredat {
++  Mufredat()
+}
+interface patterns.creational.abstractFactory.university.BilgisayarMuhendisligiFactory {
+~ Mufredat dersYarat(String)
+~ OgretimUyesi ogretimUyesiYarat(String)
+~ Takvim takvimYarat(String)
+~ Mufredat mufredatYarat(String)
+}
+class patterns.creational.abstractFactory.university.OgretimUyesi {
++  OgretimUyesi()
+}
+class patterns.creational.abstractFactory.university.Takvim {
++ Takvim()
+}
+class patterns.creational.abstractFactory.university.IkinciSinifFactory {
++ IkinciSinifFactory()
++ Mufredat dersYarat(String)
++ OgretimUyesi ogretimUyesiYarat(String)
++ Takvim takvimYarat(String)
++ Mufredat mufredatYarat(String)
+}
+class patterns.creational.abstractFactory.university.UcuncuSinifFactory {
++ UcuncuSinifFactory()
++ Mufredat dersYarat(String)
++ OgretimUyesi ogretimUyesiYarat(String)
++ Takvim takvimYarat(String)
++ Mufredat mufredatYarat(String)
+}
+class patterns.creational.abstractFactory.university.BirinciSinifFactory {
++ BirinciSinifFactory()
++ Mufredat dersYarat(String)
++ OgretimUyesi ogretimUyesiYarat(String)
++ Takvim takvimYarat(String)
++ Mufredat mufredatYarat(String)
+}
+
+
+patterns.creational.abstractFactory.university.BilgisayarMuhendisligiFactory ..> patterns.creational.abstractFactory.university.Ders
+patterns.creational.abstractFactory.university.BilgisayarMuhendisligiFactory ..> patterns.creational.abstractFactory.university.Mufredat
+patterns.creational.abstractFactory.university.BilgisayarMuhendisligiFactory ..> patterns.creational.abstractFactory.university.Takvim
+patterns.creational.abstractFactory.university.BilgisayarMuhendisligiFactory ..> patterns.creational.abstractFactory.university.OgretimUyesi
+patterns.creational.abstractFactory.university.BilgisayarMuhendisligiFactory <|.. patterns.creational.abstractFactory.university.DorduncuSinifFactory
+patterns.creational.abstractFactory.university.DorduncuSinifFactory ..> patterns.creational.abstractFactory.university.Ders
+patterns.creational.abstractFactory.university.DorduncuSinifFactory ..> patterns.creational.abstractFactory.university.Mufredat
+patterns.creational.abstractFactory.university.DorduncuSinifFactory ..> patterns.creational.abstractFactory.university.OgretimUyesi
+patterns.creational.abstractFactory.university.DorduncuSinifFactory ..> patterns.creational.abstractFactory.university.Takvim
+patterns.creational.abstractFactory.university.BilgisayarMuhendisligiFactory <|.. patterns.creational.abstractFactory.university.IkinciSinifFactory
+patterns.creational.abstractFactory.university.IkinciSinifFactory ..> patterns.creational.abstractFactory.university.Ders
+patterns.creational.abstractFactory.university.IkinciSinifFactory ..> patterns.creational.abstractFactory.university.Mufredat
+patterns.creational.abstractFactory.university.IkinciSinifFactory ..> patterns.creational.abstractFactory.university.OgretimUyesi
+patterns.creational.abstractFactory.university.IkinciSinifFactory ..> patterns.creational.abstractFactory.university.Takvim
+patterns.creational.abstractFactory.university.BilgisayarMuhendisligiFactory <|.. patterns.creational.abstractFactory.university.UcuncuSinifFactory
+patterns.creational.abstractFactory.university.UcuncuSinifFactory ..> patterns.creational.abstractFactory.university.Ders
+patterns.creational.abstractFactory.university.UcuncuSinifFactory ..> patterns.creational.abstractFactory.university.Mufredat
+patterns.creational.abstractFactory.university.UcuncuSinifFactory ..> patterns.creational.abstractFactory.university.OgretimUyesi
+patterns.creational.abstractFactory.university.UcuncuSinifFactory ..> patterns.creational.abstractFactory.university.Takvim
+patterns.creational.abstractFactory.university.BilgisayarMuhendisligiFactory <|.. patterns.creational.abstractFactory.university.BirinciSinifFactory
+patterns.creational.abstractFactory.university.BirinciSinifFactory ..> patterns.creational.abstractFactory.university.Ders
+patterns.creational.abstractFactory.university.BirinciSinifFactory ..> patterns.creational.abstractFactory.university.Mufredat
+patterns.creational.abstractFactory.university.BirinciSinifFactory ..> patterns.creational.abstractFactory.university.OgretimUyesi
+patterns.creational.abstractFactory.university.BirinciSinifFactory ..> patterns.creational.abstractFactory.university.Takvim
+@enduml

@@ -1,0 +1,29 @@
+@startuml
+class patterns.behavioral.templateMethod.Twitter {
++ Twitter(String,String)
++ boolean logIn(String,String)
++ boolean sendData(byte[])
++ void logOut()
+- void simulateNetworkLatency()
+}
+class patterns.behavioral.templateMethod.Facebook {
++ Facebook(String,String)
++ boolean logIn(String,String)
++ boolean sendData(byte[])
++ void logOut()
+- void simulateNetworkLatency()
+}
+abstract class patterns.behavioral.templateMethod.Network {
+~ String userName
+~ String password
+~ Network()
++ boolean post(String)
+~ {abstract}boolean logIn(String,String)
+~ {abstract}boolean sendData(byte[])
+~ {abstract}void logOut()
+}
+
+
+patterns.behavioral.templateMethod.Network <|-- patterns.behavioral.templateMethod.Twitter
+patterns.behavioral.templateMethod.Network <|-- patterns.behavioral.templateMethod.Facebook
+@enduml

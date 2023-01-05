@@ -1,0 +1,39 @@
+@startuml
+class patterns.structural.flyweight.MermiFactory {
+- {static} Map<EnumMermiBoyutu,Mermi> map
++ {static} Mermi mermiUret(EnumMermiBoyutu)
+}
+class patterns.structural.flyweight.Yuzbasi {
++ Yuzbasi()
+}
+abstract class patterns.structural.flyweight.Asker {
+- EnumMermiBoyutu mermiBoyutu
++ Asker(EnumMermiBoyutu)
++ void atesEt()
++ void tara()
+}
+class patterns.structural.flyweight.Er {
++ Er()
+}
+enum patterns.structural.flyweight.EnumMermiBoyutu {
++  UC
++  BES
++  YEDI
+- int boyut
+~ EnumMermiBoyutu(int)
++ String toString()
++ int getBoyut()
+}
+class patterns.structural.flyweight.Mermi {
+- EnumMermiBoyutu mermiBoyutu
++ Mermi(EnumMermiBoyutu)
++ void atesle()
+}
+
+patterns.structural.flyweight.MermiFactory ..> patterns.structural.flyweight.EnumMermiBoyutu
+patterns.structural.flyweight.MermiFactory ..> patterns.structural.flyweight.Mermi
+patterns.structural.flyweight.Asker --> patterns.structural.flyweight.EnumMermiBoyutu
+patterns.structural.flyweight.Mermi --> patterns.structural.flyweight.EnumMermiBoyutu
+patterns.structural.flyweight.Asker <|-- patterns.structural.flyweight.Yuzbasi
+patterns.structural.flyweight.Asker <|-- patterns.structural.flyweight.Er
+@enduml

@@ -1,0 +1,59 @@
+@startuml
+class patterns.structural.decorator.Sucuk {
++ Sucuk(Tost,String,int)
+}
+class patterns.structural.decorator.Domates {
++ Domates(Tost,String,int)
+}
+class patterns.structural.decorator.Ketcap {
++  Ketcap(Tost,String,int)
+}
+
+abstract class patterns.structural.decorator.Malzeme {
+- String isim
+# Tost tostMalzemeleri
+# int fiyat
+- List<Malzeme> malzemeler
++ Malzeme(Tost,int,String)
++ int fiyatHesapla()
++ List<Malzeme> getMalzemeler()
++ String getIsim()
++ Tost getTostMalzemeleri()
++ String toString()
+}
+class patterns.structural.decorator.Peynir {
++ Peynir(Tost,String,int)
+}
+class patterns.structural.decorator.Marul {
++ Marul(Tost,String,int)
+}
+class patterns.structural.decorator.TostEkmegi {
+- {static} String isim
+# int fiyat
++ TostEkmegi(String,int)
++ int fiyatHesapla()
++ List<Malzeme> getMalzemeler()
+}
+
+interface patterns.structural.decorator.Tost {
++ int fiyatHesapla()
+~ List<Malzeme> getMalzemeler()
+}
+class patterns.structural.decorator.Musteri {
+~ Tost ayvalıkToast
+~ Tost susurlukTostu
++ {static} void main(String[])
++ void ayvalikTostuYap()
++ void susurlukTostuYap()
+- void icindekileriYazdir(Tost)
+}
+
+patterns.structural.decorator.Tost ..> patterns.structural.decorator.Malzeme
+patterns.structural.decorator.Malzeme <|-- patterns.structural.decorator.Sucuk
+patterns.structural.decorator.Malzeme <|-- patterns.structural.decorator.Domates
+patterns.structural.decorator.Malzeme <|-- patterns.structural.decorator.Ketcap
+patterns.structural.decorator.Tost <|.. patterns.structural.decorator.Malzeme
+patterns.structural.decorator.Malzeme <|-- patterns.structural.decorator.Peynir
+patterns.structural.decorator.Malzeme <|-- patterns.structural.decorator.Marul
+patterns.structural.decorator.Tost <|.. patterns.structural.decorator.TostEkmegi
+@enduml

@@ -1,0 +1,67 @@
+@startuml
+interface patterns.behavioral.mediator.Araci {
+~ void ureticiEkle(Uretici)
+~ void halciEkle(Halci)
+~ void ureticidenAl(Uretici)
+~ void haleSat(Halci)
+}
+abstract class patterns.behavioral.mediator.Uretici {
+- String adi
+- EnumUrun urun
+- BigDecimal fiyat
+- Araci araci
++ Uretici(String,EnumUrun,BigDecimal,Araci)
++ void urunSat()
++ String getAdi()
++ EnumUrun getUrun()
++ BigDecimal getFiyat()
+}
+class patterns.behavioral.mediator.DomatesUreticisi {
++ DomatesUreticisi(String,BigDecimal,Araci)
+}
+class patterns.behavioral.mediator.DomatesHalcisi {
++ DomatesHalcisi(String,BigDecimal,Araci)
+}
+abstract class patterns.behavioral.mediator.Halci {
+- String adi
+- EnumUrun urun
+- BigDecimal fiyat
+- Araci araci
++ Halci(String,EnumUrun,BigDecimal,Araci)
++ void urunAl()
++ String getAdi()
++ EnumUrun getUrun()
++ BigDecimal getFiyat()
+}
+class patterns.behavioral.mediator.Kabzimal {
+- List<Uretici> ureticiList
+- List<Halci> halciList
++ Kabzimal()
++ void ureticiEkle(Uretici)
++ void halciEkle(Halci)
++ void ureticidenAl(Uretici)
++ void haleSat(Halci)
+- Uretici enUygunUreticiBul(EnumUrun)
+- Halci enUygunHalciBul(EnumUrun)
+- void satisYap(Uretici,Halci)
+}
+enum patterns.behavioral.mediator.EnumUrun {
++  DOMATES
++  SALATALIK
+- String urun
+~ EnumUrun(String)
++ String getUrun()
+}
+
+patterns.behavioral.mediator.Halci --> patterns.behavioral.mediator.EnumUrun
+patterns.behavioral.mediator.Araci <-- patterns.behavioral.mediator.Halci
+patterns.behavioral.mediator.Kabzimal ..> patterns.behavioral.mediator.Halci
+patterns.behavioral.mediator.Kabzimal ..> patterns.behavioral.mediator.Uretici
+patterns.behavioral.mediator.Uretici --> patterns.behavioral.mediator.EnumUrun
+patterns.behavioral.mediator.Uretici --> patterns.behavioral.mediator.Araci
+patterns.behavioral.mediator.Araci ..> patterns.behavioral.mediator.Uretici
+patterns.behavioral.mediator.Araci ..> patterns.behavioral.mediator.Halci
+patterns.behavioral.mediator.Uretici <|-- patterns.behavioral.mediator.DomatesUreticisi
+patterns.behavioral.mediator.Halci <|-- patterns.behavioral.mediator.DomatesHalcisi
+patterns.behavioral.mediator.Araci <|.. patterns.behavioral.mediator.Kabzimal
+@enduml

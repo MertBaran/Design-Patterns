@@ -1,0 +1,27 @@
+@startuml
+class patterns.behavioral.observer.Ebeveyn {
+- String adi
++ void update(Observable)
+}
+abstract class patterns.behavioral.observer.Observable {
++ List<Observer> observerList
++ void addObserver(Observer)
++ void deleteObserver(Observer)
++ void notifyToObserver()
+}
+interface patterns.behavioral.observer.Observer {
+~ void update(Observable)
+}
+class patterns.behavioral.observer.Termometre {
+- BigDecimal anlikSicaklik
+- BigDecimal minSicaklik
+- BigDecimal maxSicaklik
++ void setAnlikSicaklik(BigDecimal)
++ BigDecimal getAnlikSicaklik()
++ void sicakligiKontrolEt(BigDecimal)
+}
+
+patterns.behavioral.observer.Observer ..> patterns.behavioral.observer.Observable
+patterns.behavioral.observer.Observer <|.. patterns.behavioral.observer.Ebeveyn
+patterns.behavioral.observer.Observable <|-- patterns.behavioral.observer.Termometre
+@enduml

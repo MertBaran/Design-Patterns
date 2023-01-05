@@ -1,0 +1,33 @@
+@startuml
+class patterns.behavioral.memento.NotePadMemento {
+- String metin
++ NotePadMemento()
++ NotePadMemento(String)
++ String getMetin()
+}
+class patterns.behavioral.memento.NotePad {
+- String metin
++ NotePad()
++ NotePad(String)
++ void ekle(String)
++ NotePadMemento kaydet()
++ void geriDon(NotePadMemento)
++ void yazdir()
+}
+class patterns.behavioral.memento.App {
++ {static} void main(String[])
+- {static} void geriAl(Hafiza,NotePad)
+- {static} void hataliNoktaKoy(NotePad)
+- {static} void versiyonKaydet(Hafiza,NotePad)
+}
+class patterns.behavioral.memento.Hafiza {
+- List<NotePadMemento> list
++ Hafiza()
++ void ekle(NotePadMemento)
++ NotePadMemento sonVersiyonuGetir()
+}
+patterns.behavioral.memento.Hafiza --> patterns.behavioral.memento.NotePadMemento
+patterns.behavioral.memento.NotePad ..> patterns.behavioral.memento.NotePadMemento
+patterns.behavioral.memento.App ..> patterns.behavioral.memento.Hafiza
+patterns.behavioral.memento.App ..> patterns.behavioral.memento.NotePad
+@enduml
