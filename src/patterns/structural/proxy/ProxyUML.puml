@@ -27,9 +27,8 @@ class patterns.structural.proxy.VekilBasbakan {
 - void ilet(String)
 }
 patterns.structural.proxy.Vatandas ..> patterns.structural.proxy.BasbakanlikKalemi
-patterns.structural.proxy.BasbakanlikKalemi ..> patterns.structural.proxy.VekilBasbakan
 patterns.structural.proxy.Vatandas --> patterns.structural.proxy.Basbakan
-patterns.structural.proxy.BasbakanlikKalemi --> patterns.structural.proxy.Basbakan
+patterns.structural.proxy.BasbakanlikKalemi -> patterns.structural.proxy.Basbakan
 patterns.structural.proxy.VekilBasbakan --> patterns.structural.proxy.Basbakan
 patterns.structural.proxy.Basbakan <|.. patterns.structural.proxy.GercekBasbakan
 patterns.structural.proxy.Basbakan <|.. patterns.structural.proxy.VekilBasbakan

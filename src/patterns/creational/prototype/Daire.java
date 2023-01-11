@@ -30,4 +30,8 @@ public class Daire extends Sekil{
         Daire sekil2 = (Daire) digerNesne;
         return sekil2.yaricap == yaricap;
     }
+    @Override
+    public void setRenk(String renk) {
+        super.setRenk(renk);
+    }
 }

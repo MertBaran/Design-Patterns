@@ -15,10 +15,7 @@ class patterns.structural.composite.Kumanya {
 interface patterns.structural.composite.Fiyatlanabilir {
 ~ BigDecimal getFiyat()
 }
-class patterns.structural.composite.FiyatHesaplamaUtil {
-+ {static} BigDecimal getToplamUrunFiyati(List<Urun>)
-+ {static} BigDecimal getToplamPaketFiyati(List<Paket>)
-}
+
 class patterns.structural.composite.Urun {
 - String adi
 - BigDecimal fiyat
@@ -48,9 +45,10 @@ class patterns.structural.composite.Sepet {
 + List<Fiyatlanabilir> getFiyatlanabilirList()
 + void setFiyatlanabilirList(List<Fiyatlanabilir>)
 }
-patterns.structural.composite.Sepet --> patterns.structural.composite.Fiyatlanabilir
-patterns.structural.composite.FiyatHesaplamaUtil ..> patterns.structural.composite.Paket
-patterns.structural.composite.FiyatHesaplamaUtil ..> patterns.structural.composite.Urun
+patterns.structural.composite.Sepet o--> patterns.structural.composite.Fiyatlanabilir
+patterns.structural.composite.Kumanya o-> patterns.structural.composite.Urun
+patterns.structural.composite.Kumanya o-> patterns.structural.composite.Paket
+patterns.structural.composite.Paket o-> patterns.structural.composite.Urun
 patterns.structural.composite.Fiyatlanabilir <|.. patterns.structural.composite.Kumanya
 patterns.structural.composite.Fiyatlanabilir <|.. patterns.structural.composite.Urun
 patterns.structural.composite.Fiyatlanabilir <|.. patterns.structural.composite.Paket

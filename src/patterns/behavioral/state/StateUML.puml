@@ -6,7 +6,7 @@ class patterns.behavioral.state.Defans {
 + void xBas()
 }
 class patterns.behavioral.state.Oyun {
-- Konsol konsol
+- Konsol durum
 + Oyun()
 + void ucgen()
 + void kare()
@@ -27,7 +27,7 @@ class patterns.behavioral.state.Hucum {
 + void yuvarlakBas()
 + void xBas()
 }
-patterns.behavioral.state.Oyun --> patterns.behavioral.state.Konsol
+patterns.behavioral.state.Oyun -> patterns.behavioral.state.Konsol
 patterns.behavioral.state.Konsol <|.. patterns.behavioral.state.Defans
 patterns.behavioral.state.Konsol <|.. patterns.behavioral.state.Hucum
 @enduml

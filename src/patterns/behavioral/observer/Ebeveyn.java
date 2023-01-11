@@ -11,9 +11,7 @@ public class Ebeveyn  implements Observer{
 
     @Override
     public void update(Observable observable) {
-
-        Termometre termometre = (Termometre)observable;
-        System.out.println(adi + ": ooo sicaklik " + termometre.getAnlikSicaklik() + " derece olmuş");
+        System.out.println(adi + ": ooo sicaklik " +observable.observedState + " derece olmuş");
     }
 
 }

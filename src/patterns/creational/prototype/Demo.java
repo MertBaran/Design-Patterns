@@ -31,19 +31,22 @@ public class Demo {
     private static void klonlaVeKıyasla(List<Sekil> sekiller, List<Sekil> kopyaSekiller) {
         for (Sekil sekil : sekiller) {
             kopyaSekiller.add(sekil.clone());
+            System.out.println(sekil.x+ sekil.y+sekil.renk);
         }
 
         for (int i = 0; i < sekiller.size(); i++) {
             if (sekiller.get(i) != kopyaSekiller.get(i)) {
                 System.out.println(i +"."+ sekiller.get(i).toString() +" ---- "+ kopyaSekiller.get(i).toString()+
                         " " +": Şekiller birbirinden farklı nesneler :)");
+                System.out.println(sekiller.get(i).x+ " "+ sekiller.get(i).y +" "+ sekiller.get(i).renk +"--"+
+                        kopyaSekiller.get(i).x +" "+ kopyaSekiller.get(i).y +" "+ kopyaSekiller.get(i).renk);
                 if (sekiller.get(i).equals(kopyaSekiller.get(i))) {
                     System.out.println(i + ": Ancak yine de aynılar :)");
                 } else {
                     System.out.println(i + ": Ancak aynı değiller :(");
                 }
             } else {
-                System.out.println(i + ": Şekiller aynı nesneler :()");
+                System.out.println(i + ": Şekiller aynı nesneler :(");
             }
         }
     }

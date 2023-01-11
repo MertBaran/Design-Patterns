@@ -7,6 +7,7 @@ public class MermiFactory {
 
     private static Map<EnumMermiBoyutu, Mermi> map = new LinkedHashMap<>();
 
+
     public static Mermi mermiUret(EnumMermiBoyutu mermiBoyutu){
 
         Mermi mermi = map.get(mermiBoyutu);

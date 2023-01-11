@@ -4,34 +4,17 @@ public class App {
     public static void main(String[] args) {
 
         Hafiza hafiza = new Hafiza();
-
         NotePad notePad = new NotePad();
-        notePad.ekle("B");
-        notePad.ekle("A");
-        notePad.ekle("H");
-        notePad.ekle("A");
+
+        notePad.ekle("MERT");
+        notePad.ekle("BARAN");
 
         versiyonKaydet(hafiza, notePad);
-
-        notePad.ekle("DIR");
-
-        versiyonKaydet(hafiza, notePad);
-
         hataliNoktaKoy(notePad);
+        geriAl(hafiza,notePad);
 
-        geriAl(hafiza, notePad);
 
-        versiyonKaydet(hafiza, notePad);
 
-        notePad.ekle(" MEMİŞ");
-
-        versiyonKaydet(hafiza, notePad);
-
-        hataliNoktaKoy(notePad);
-
-        geriAl(hafiza, notePad);
-        geriAl(hafiza, notePad);
-        geriAl(hafiza, notePad);
 
     }
 

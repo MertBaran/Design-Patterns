@@ -30,9 +30,11 @@ class patterns.structural.flyweight.Mermi {
 + void atesle()
 }
 
-patterns.structural.flyweight.MermiFactory ..> patterns.structural.flyweight.EnumMermiBoyutu
-patterns.structural.flyweight.MermiFactory ..> patterns.structural.flyweight.Mermi
+patterns.structural.flyweight.MermiFactory o..> patterns.structural.flyweight.EnumMermiBoyutu
+patterns.structural.flyweight.MermiFactory o..> patterns.structural.flyweight.Mermi
 patterns.structural.flyweight.Asker --> patterns.structural.flyweight.EnumMermiBoyutu
+patterns.structural.flyweight.Asker .> patterns.structural.flyweight.MermiFactory
+patterns.structural.flyweight.Asker .> patterns.structural.flyweight.Mermi
 patterns.structural.flyweight.Mermi --> patterns.structural.flyweight.EnumMermiBoyutu
 patterns.structural.flyweight.Asker <|-- patterns.structural.flyweight.Yuzbasi
 patterns.structural.flyweight.Asker <|-- patterns.structural.flyweight.Er

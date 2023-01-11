@@ -28,11 +28,47 @@ class patterns.behavioral.iterator.Soru {
 + Long getSoruNo()
 + void setSoruNo(Long)
 }
+class patterns.behavioral.iterator.Deneme{
+- String adi
+- Set<Soru> soruSet
++ Deneme(String)
++ String getAdi()
++ void setAdi(String)
++ Iterator getSoruIterator()
+}
+class patterns.behavioral.iterator.SoruBankasi{
+- String adi
+- Map<Deneme,Soru> soruMap
++ SoruBankasi(String)
++ String getAdi()
++ void setAdi(String)
++ Iterator getSoruIterator()
+}
+interface java.util.Iterator<E>{
++ boolean hasNext()
++ E next()
++ void remove()
++ void forEachRemaining()
+}
+class patterns.behavioral.iterator.Uygulama{
 
-patterns.behavioral.iterator.SoruIterator --> patterns.behavioral.iterator.Soru
-patterns.behavioral.iterator.Fasikul --> patterns.behavioral.iterator.Soru
++ {static} void main(String[])
+- {static} void yazdir(Iterator soruIterator)
+}
+patterns.behavioral.iterator.Uygulama -> patterns.behavioral.iterator.SoruBankasi
+patterns.behavioral.iterator.Uygulama -> patterns.behavioral.iterator.Deneme
+patterns.behavioral.iterator.Uygulama -> patterns.behavioral.iterator.Kitap
+patterns.behavioral.iterator.Uygulama -> patterns.behavioral.iterator.Fasikul
+patterns.behavioral.iterator.Uygulama ..> java.util.Iterator
+patterns.behavioral.iterator.SoruBankasi o--> patterns.behavioral.iterator.Deneme
+patterns.behavioral.iterator.SoruBankasi o--> patterns.behavioral.iterator.Soru
+patterns.behavioral.iterator.SoruBankasi ..> java.util.Iterator
+patterns.behavioral.iterator.Deneme ..> java.util.Iterator
+patterns.behavioral.iterator.Deneme o--> patterns.behavioral.iterator.Soru
+patterns.behavioral.iterator.SoruIterator o-> patterns.behavioral.iterator.Soru
+patterns.behavioral.iterator.Fasikul o--> patterns.behavioral.iterator.Soru
 patterns.behavioral.iterator.Fasikul ..> patterns.behavioral.iterator.SoruIterator
-patterns.behavioral.iterator.Kitap --> patterns.behavioral.iterator.Soru
-patterns.behavioral.iterator.Kitap ..> java.util.Iterator
+patterns.behavioral.iterator.Kitap o--> patterns.behavioral.iterator.Soru
+patterns.behavioral.iterator.Kitap .> java.util.Iterator
 java.util.Iterator <|.. patterns.behavioral.iterator.SoruIterator
 @enduml

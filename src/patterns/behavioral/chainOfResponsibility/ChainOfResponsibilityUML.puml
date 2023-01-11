@@ -38,8 +38,16 @@ abstract class patterns.behavioral.chainOfResponsibility.KargoSirketi {
 - void gelenKargoBilgileriYazdir(EnumIl)
 }
 
+patterns.behavioral.chainOfResponsibility.AbcKargo --> patterns.behavioral.chainOfResponsibility.BalikesirSube
+patterns.behavioral.chainOfResponsibility.AbcKargo --> patterns.behavioral.chainOfResponsibility.AnkaraSube
+patterns.behavioral.chainOfResponsibility.AbcKargo --> patterns.behavioral.chainOfResponsibility.IstanbulSube
+patterns.behavioral.chainOfResponsibility.AbcKargo --> patterns.behavioral.chainOfResponsibility.AntalyaSube
+patterns.behavioral.chainOfResponsibility.IstanbulSube ..> patterns.behavioral.chainOfResponsibility.EnumIl
+patterns.behavioral.chainOfResponsibility.AntalyaSube ..> patterns.behavioral.chainOfResponsibility.EnumIl
+patterns.behavioral.chainOfResponsibility.AnkaraSube ..> patterns.behavioral.chainOfResponsibility.EnumIl
+patterns.behavioral.chainOfResponsibility.BalikesirSube ..> patterns.behavioral.chainOfResponsibility.EnumIl
 patterns.behavioral.chainOfResponsibility.KargoSirketi --> patterns.behavioral.chainOfResponsibility.EnumIl
-patterns.behavioral.chainOfResponsibility.KargoSirketi <.. patterns.behavioral.chainOfResponsibility.AbcKargo
+patterns.behavioral.chainOfResponsibility.KargoSirketi <. patterns.behavioral.chainOfResponsibility.AbcKargo
 patterns.behavioral.chainOfResponsibility.KargoSirketi <|-- patterns.behavioral.chainOfResponsibility.AnkaraSube
 patterns.behavioral.chainOfResponsibility.KargoSirketi <|-- patterns.behavioral.chainOfResponsibility.AntalyaSube
 patterns.behavioral.chainOfResponsibility.KargoSirketi <|-- patterns.behavioral.chainOfResponsibility.IstanbulSube

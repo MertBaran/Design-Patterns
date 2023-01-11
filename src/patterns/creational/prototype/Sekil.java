@@ -7,6 +7,7 @@ public abstract class Sekil{
     public int y;
     public String renk;
 
+
     public Sekil() {
     }
 
@@ -29,5 +30,9 @@ public abstract class Sekil{
     @Override
     public String toString() {
         return "Sekil@" + hashCode();
+    }
+
+    public void setRenk(String renk) {
+        this.renk = renk;
     }
 }

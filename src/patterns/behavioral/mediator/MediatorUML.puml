@@ -55,8 +55,8 @@ enum patterns.behavioral.mediator.EnumUrun {
 
 patterns.behavioral.mediator.Halci --> patterns.behavioral.mediator.EnumUrun
 patterns.behavioral.mediator.Araci <-- patterns.behavioral.mediator.Halci
-patterns.behavioral.mediator.Kabzimal ..> patterns.behavioral.mediator.Halci
-patterns.behavioral.mediator.Kabzimal ..> patterns.behavioral.mediator.Uretici
+patterns.behavioral.mediator.Kabzimal o--> patterns.behavioral.mediator.Halci
+patterns.behavioral.mediator.Kabzimal o--> patterns.behavioral.mediator.Uretici
 patterns.behavioral.mediator.Uretici --> patterns.behavioral.mediator.EnumUrun
 patterns.behavioral.mediator.Uretici --> patterns.behavioral.mediator.Araci
 patterns.behavioral.mediator.Araci ..> patterns.behavioral.mediator.Uretici

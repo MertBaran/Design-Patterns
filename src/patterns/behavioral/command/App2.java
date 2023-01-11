@@ -5,6 +5,7 @@ public class App2 {
 
     public static void main(String[] args) {
 
+
         BigDecimal sayi1 = BigDecimal.TEN;
         BigDecimal sayi2 = BigDecimal.valueOf(2);
 

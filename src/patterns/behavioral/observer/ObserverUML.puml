@@ -21,7 +21,9 @@ class patterns.behavioral.observer.Termometre {
 + void sicakligiKontrolEt(BigDecimal)
 }
 
-patterns.behavioral.observer.Observer ..> patterns.behavioral.observer.Observable
+patterns.behavioral.observer.Observer .> patterns.behavioral.observer.Observable
+patterns.behavioral.observer.Observable <. patterns.behavioral.observer.Ebeveyn
 patterns.behavioral.observer.Observer <|.. patterns.behavioral.observer.Ebeveyn
+patterns.behavioral.observer.Observable o--> patterns.behavioral.observer.Observer
 patterns.behavioral.observer.Observable <|-- patterns.behavioral.observer.Termometre
 @enduml

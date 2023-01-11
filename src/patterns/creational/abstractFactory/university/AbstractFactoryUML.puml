@@ -1,7 +1,7 @@
 @startuml
 class patterns.creational.abstractFactory.university.DorduncuSinifFactory {
 + DorduncuSinifFactory()
-+ Mufredat dersYarat(String)
++ Ders dersYarat(String)
 + OgretimUyesi ogretimUyesiYarat(String)
 + Takvim takvimYarat(String)
 + Mufredat mufredatYarat(String)
@@ -13,7 +13,7 @@ class patterns.creational.abstractFactory.university.Mufredat {
 +  Mufredat()
 }
 interface patterns.creational.abstractFactory.university.BilgisayarMuhendisligiFactory {
-~ Mufredat dersYarat(String)
+~ Ders dersYarat(String)
 ~ OgretimUyesi ogretimUyesiYarat(String)
 ~ Takvim takvimYarat(String)
 ~ Mufredat mufredatYarat(String)
@@ -26,21 +26,21 @@ class patterns.creational.abstractFactory.university.Takvim {
 }
 class patterns.creational.abstractFactory.university.IkinciSinifFactory {
 + IkinciSinifFactory()
-+ Mufredat dersYarat(String)
++ Ders dersYarat(String)
 + OgretimUyesi ogretimUyesiYarat(String)
 + Takvim takvimYarat(String)
 + Mufredat mufredatYarat(String)
 }
 class patterns.creational.abstractFactory.university.UcuncuSinifFactory {
 + UcuncuSinifFactory()
-+ Mufredat dersYarat(String)
++ Ders dersYarat(String)
 + OgretimUyesi ogretimUyesiYarat(String)
 + Takvim takvimYarat(String)
 + Mufredat mufredatYarat(String)
 }
 class patterns.creational.abstractFactory.university.BirinciSinifFactory {
 + BirinciSinifFactory()
-+ Mufredat dersYarat(String)
++ Ders dersYarat(String)
 + OgretimUyesi ogretimUyesiYarat(String)
 + Takvim takvimYarat(String)
 + Mufredat mufredatYarat(String)

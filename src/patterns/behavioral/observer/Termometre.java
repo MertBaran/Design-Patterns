@@ -28,12 +28,12 @@ public class Termometre extends Observable{
 
 
     public void sicakligiKontrolEt(BigDecimal anlik) {
-
+        observedState = anlik;
         boolean isCokSoguk = anlik.compareTo(minSicaklik) <= 0;
         boolean isCokSicak = anlik.compareTo(maxSicaklik) >= 0;
 
         if(isCokSoguk || isCokSicak)
-            notifyToObserver();
+            notifyToObserver(this.observedState);
 
     }
 }

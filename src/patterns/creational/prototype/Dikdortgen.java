@@ -31,5 +31,9 @@ public class Dikdortgen extends Sekil{
         Dikdortgen sekil2 = (Dikdortgen) digerNesne;
         return sekil2.genislik == genislik && sekil2.yukseklik == yukseklik;
     }
+    @Override
+    public void setRenk(String renk) {
+        super.setRenk(renk);
+    }
 
 }

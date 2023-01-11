@@ -47,8 +47,11 @@ class patterns.structural.decorator.Musteri {
 + void susurlukTostuYap()
 - void icindekileriYazdir(Tost)
 }
-
-patterns.structural.decorator.Tost ..> patterns.structural.decorator.Malzeme
+patterns.structural.decorator.Musteri o- patterns.structural.decorator.Tost
+patterns.structural.decorator.TostEkmegi o.> patterns.structural.decorator.Malzeme
+patterns.structural.decorator.Tost o.> patterns.structural.decorator.Malzeme
+patterns.structural.decorator.Malzeme --> patterns.structural.decorator.Tost
+patterns.structural.decorator.Malzeme o-> patterns.structural.decorator.Malzeme
 patterns.structural.decorator.Malzeme <|-- patterns.structural.decorator.Sucuk
 patterns.structural.decorator.Malzeme <|-- patterns.structural.decorator.Domates
 patterns.structural.decorator.Malzeme <|-- patterns.structural.decorator.Ketcap

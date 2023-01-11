@@ -6,6 +6,7 @@ class patterns.creational.prototype.Daire {
 + Sekil clone()
 + String toString()
 + boolean equals(Object)
++ void setRenk()
 }
 class patterns.creational.prototype.Client {
 + {static} void main(String[])
@@ -20,6 +21,7 @@ abstract class patterns.creational.prototype.Sekil {
 + {abstract}Sekil clone()
 + boolean equals(Object)
 + String toString()
++ void setRenk()
 }
 class patterns.creational.prototype.Dikdortgen {
 + int genislik
@@ -29,9 +31,10 @@ class patterns.creational.prototype.Dikdortgen {
 + String toString()
 + Sekil clone()
 + boolean equals(Object)
++ void setRenk()
 }
 
-patterns.creational.prototype.Client ..> patterns.creational.prototype.Sekil
+patterns.creational.prototype.Client o..> patterns.creational.prototype.Sekil
 patterns.creational.prototype.Sekil <|-- patterns.creational.prototype.Daire
 patterns.creational.prototype.Sekil <|-- patterns.creational.prototype.Dikdortgen
 @enduml

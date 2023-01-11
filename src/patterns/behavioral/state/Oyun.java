@@ -28,7 +28,7 @@ public class Oyun {
 
     public void topuKap(){
         System.out.println("Top kapıldı. Hücuma çıkılıyor!");
-        konsol = new Hucum();
+        konsol = new Hucum(); //durum hücum olarak değiştirilmiştir
     }
 
     public void topuKaptir(){

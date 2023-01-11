@@ -51,9 +51,8 @@ patterns.behavioral.strategy.SinavStratejisi ..> patterns.behavioral.strategy.De
 patterns.behavioral.strategy.SayisalStratejisi ..> patterns.behavioral.strategy.Ders
 patterns.behavioral.strategy.EsitAgirlikStratejisi ..> patterns.behavioral.strategy.Ders
 patterns.behavioral.strategy.SozelStratejisi ..> patterns.behavioral.strategy.Ders
-patterns.behavioral.strategy.Bolum ..> patterns.behavioral.strategy.Ders
-patterns.behavioral.strategy.Ogrenci --> patterns.behavioral.strategy.Bolum
-patterns.behavioral.strategy.Ogrenci --> patterns.behavioral.strategy.SinavStratejisi
+patterns.behavioral.strategy.Ogrenci o--> patterns.behavioral.strategy.Bolum
+patterns.behavioral.strategy.Ogrenci o--> patterns.behavioral.strategy.SinavStratejisi
 patterns.behavioral.strategy.SinavStratejisi <|.. patterns.behavioral.strategy.SozelStratejisi
 patterns.behavioral.strategy.SinavStratejisi <|.. patterns.behavioral.strategy.SayisalStratejisi
 patterns.behavioral.strategy.SinavStratejisi <|.. patterns.behavioral.strategy.EsitAgirlikStratejisi

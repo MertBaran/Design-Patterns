@@ -61,9 +61,10 @@ class patterns.structural.Bridge.BasicRemote {
 + void channelUp()
 }
 
+patterns.structural.Bridge.Client .> patterns.structural.Bridge.Remote
 patterns.structural.Bridge.Client ..> patterns.structural.Bridge.Device
 patterns.structural.Bridge.Device <|.. patterns.structural.Bridge.TV
-patterns.structural.Bridge.BasicRemote - patterns.structural.Bridge.Device
+patterns.structural.Bridge.BasicRemote -> patterns.structural.Bridge.Device
 patterns.structural.Bridge.BasicRemote <|-- patterns.structural.Bridge.AdvancedRemote
 patterns.structural.Bridge.Device <|.. patterns.structural.Bridge.Radio
 patterns.structural.Bridge.Remote <|.. patterns.structural.Bridge.BasicRemote

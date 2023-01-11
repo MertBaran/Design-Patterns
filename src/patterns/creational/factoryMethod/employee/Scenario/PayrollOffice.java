@@ -8,6 +8,6 @@ public class PayrollOffice {
             String departman = calisan.getDepartman();
             double maas = calisan.maasHesapla();
 
-            System.out.println("Paying " + maas + " to " + isim + " in " + departman);
+            System.out.println("Ödeniyor  " + maas + " => " + isim + " ,departmanı: " + departman);
         }
 }

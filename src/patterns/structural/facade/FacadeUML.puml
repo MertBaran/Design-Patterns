@@ -41,12 +41,12 @@ class patterns.structural.facade.Computer {
 + void start()
 }
 patterns.structural.facade.Client ..> patterns.structural.facade.Computer
-patterns.structural.facade.BIOS - patterns.structural.facade.ROM
-patterns.structural.facade.RAM - patterns.structural.facade.BIOS
-patterns.structural.facade.Computer --> patterns.structural.facade.BIOS
-patterns.structural.facade.Computer --> patterns.structural.facade.CPU
-patterns.structural.facade.Computer --> patterns.structural.facade.Display
-patterns.structural.facade.Computer --> patterns.structural.facade.HardDrive
-patterns.structural.facade.Computer --> patterns.structural.facade.RAM
-patterns.structural.facade.Computer --> patterns.structural.facade.ROM
+patterns.structural.facade.BIOS o-> patterns.structural.facade.ROM
+patterns.structural.facade.RAM o-> patterns.structural.facade.BIOS
+patterns.structural.facade.Computer *--> patterns.structural.facade.BIOS
+patterns.structural.facade.Computer *--> patterns.structural.facade.CPU
+patterns.structural.facade.Computer *--> patterns.structural.facade.Display
+patterns.structural.facade.Computer *--> patterns.structural.facade.HardDrive
+patterns.structural.facade.Computer *--> patterns.structural.facade.RAM
+patterns.structural.facade.Computer *--> patterns.structural.facade.ROM
 @enduml

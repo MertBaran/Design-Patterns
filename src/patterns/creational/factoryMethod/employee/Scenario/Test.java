@@ -6,25 +6,24 @@ public class Test {
 
 	public static void main(String[] args) {
 		IK Ik = new IK();
+		PayrollOffice maasÖdemeBurosu = new PayrollOffice();
 
-		PayrollOffice po = new PayrollOffice();
+		CalisanFactory calisanFactory = new CalisanFactoryImpl();
+		MudurFactory mudurFactory = new MudurFactoryImpl();
+		GenelMudurFactory genelMudurFactory = new GenelMudurFactoryImpl();
 
-		// Add more employees
-
-		Ik.yeniCalisanEkle(CalisanFactory.calisanYarat("Ali"));
-		Ik.yeniCalisanEkle(CalisanFactory.calisanYarat("Zeynep"));
-		Ik.yeniCalisanEkle(CalisanFactory.calisanYarat("Turgut"));
-		Ik.yeniCalisanEkle(CalisanFactory.mudurYarat("Selim", "Satış Departmanı"));
-		Ik.yeniCalisanEkle(CalisanFactory.mudurYarat("Handan", "Üretim Departmanı"));
-		Ik.yeniCalisanEkle(CalisanFactory.genelMudurYarat("Ahmet", "Yönetim Departmanı", 10_000));
-
+		Ik.yeniCalisanEkle(calisanFactory.yarat("Ali"));
+		Ik.yeniCalisanEkle(calisanFactory.yarat("Zeynep"));
+		Ik.yeniCalisanEkle(calisanFactory.yarat("Turgut"));
+		Ik.yeniCalisanEkle(mudurFactory.yarat("Selim", "Satış Departmanı"));
+		Ik.yeniCalisanEkle(mudurFactory.yarat("Handan", "Üretim Departmanı"));
+		Ik.yeniCalisanEkle(genelMudurFactory.yarat("Ahmet", "Yönetim Departmanı", 10_000));
 
 		System.out.println();
 
-		// Now pay time!
 		List<Calisan> calisanlar = Ik.getCalisanlar();
 
 		for (Calisan calisan : calisanlar)
-			po.maasOde(calisan);
+			maasÖdemeBurosu.maasOde(calisan);
 	}
 }

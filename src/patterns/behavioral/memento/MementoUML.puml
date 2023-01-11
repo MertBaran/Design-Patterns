@@ -26,8 +26,8 @@ class patterns.behavioral.memento.Hafiza {
 + void ekle(NotePadMemento)
 + NotePadMemento sonVersiyonuGetir()
 }
-patterns.behavioral.memento.Hafiza --> patterns.behavioral.memento.NotePadMemento
+patterns.behavioral.memento.Hafiza o-> patterns.behavioral.memento.NotePadMemento
 patterns.behavioral.memento.NotePad ..> patterns.behavioral.memento.NotePadMemento
-patterns.behavioral.memento.App ..> patterns.behavioral.memento.Hafiza
-patterns.behavioral.memento.App ..> patterns.behavioral.memento.NotePad
+patterns.behavioral.memento.App .> patterns.behavioral.memento.Hafiza
+patterns.behavioral.memento.App .> patterns.behavioral.memento.NotePad
 @enduml

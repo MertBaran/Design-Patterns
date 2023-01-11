@@ -28,7 +28,12 @@ interface patterns.behavioral.visitor.animal.Animal {
 class patterns.behavioral.visitor.animal.CatFeeder {
 + void feed(Animal)
 }
-patterns.behavioral.visitor.animal.Feeder ..> patterns.behavioral.visitor.animal.Animal
+patterns.behavioral.visitor.animal.Feeder <. patterns.behavioral.visitor.animal.Animal
+patterns.behavioral.visitor.animal.Feeder .> patterns.behavioral.visitor.animal.Animal
+patterns.behavioral.visitor.animal.Cat ..> patterns.behavioral.visitor.animal.Feeder
+patterns.behavioral.visitor.animal.Dog ..> patterns.behavioral.visitor.animal.Feeder
+patterns.behavioral.visitor.animal.CatFeeder ..> patterns.behavioral.visitor.animal.Animal
+patterns.behavioral.visitor.animal.DogFeeder ..> patterns.behavioral.visitor.animal.Animal
 patterns.behavioral.visitor.animal.AbstractAnimal <|-- patterns.behavioral.visitor.animal.Cat
 patterns.behavioral.visitor.animal.AbstractAnimal <|-- patterns.behavioral.visitor.animal.Dog
 patterns.behavioral.visitor.animal.Animal <|.. patterns.behavioral.visitor.animal.AbstractAnimal
